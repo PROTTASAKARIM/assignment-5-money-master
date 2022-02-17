@@ -4,6 +4,7 @@ function inputValue() {
     const incomeInputValue = incomeInput.value;
     return incomeInputValue;
 }
+//if incorrect data is given save field and remaing fiels will give this msg
 function saveChanges() {
     const savingAmountField = document.getElementById('saving-amount');
     const remainingBalanceField = document.getElementById('remaining-balance');
@@ -12,7 +13,7 @@ function saveChanges() {
     remainingBalanceField.innerText = 'Waiting for correct input';
 
 }
-
+//calculate expance 
 function expanceBalanceCalculation() {
     const incomeInputValue = inputValue();
 
@@ -65,14 +66,8 @@ function expanceBalanceCalculation() {
     }
 
 }
-
-
-document.getElementById('calculate-btn').addEventListener('click', function () {
-    expanceBalanceCalculation();
-})
-
-document.getElementById('save-btn').addEventListener('click', function () {
-
+//calculate save and remaining amount
+function saveButtonChanges() {
     const incomeInputValue = inputValue();
     const totalBalance = expanceBalanceCalculation();
 
@@ -112,7 +107,14 @@ document.getElementById('save-btn').addEventListener('click', function () {
         remainingBalanceField.innerText = 'Remaining balance can not be calculated';
         alartDisplay.style.display = 'block';
     }
+}
 
 
+document.getElementById('calculate-btn').addEventListener('click', function () {
+    expanceBalanceCalculation();
+})
+
+document.getElementById('save-btn').addEventListener('click', function () {
+    saveButtonChanges();
 
 })
