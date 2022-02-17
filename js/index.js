@@ -37,9 +37,9 @@ function expanceBalanceCalculation() {
 
 
     //validation for if the inputs are not number and if the numbers are greater then 0 
-    if (typeof (parseFloat(incomeInputValue)) == "number" && parseFloat(incomeInputValue) > 0 && typeof (parseFloat(foodInputValue)) == "number" && parseFloat(foodInputValue) > 0 &&
-        typeof (parseFloat(rentInputValue)) == "number" && parseFloat(rentInputValue) > 0 &&
-        typeof (parseFloat(clothesInputValue)) == "number" && parseFloat(clothesInputValue) > 0) {
+    if (typeof (parseFloat(incomeInputValue)) == "number" && parseFloat(incomeInputValue) >= 0 && typeof (parseFloat(foodInputValue)) == "number" && parseFloat(foodInputValue) >= 0 &&
+        typeof (parseFloat(rentInputValue)) == "number" && parseFloat(rentInputValue) >= 0 &&
+        typeof (parseFloat(clothesInputValue)) == "number" && parseFloat(clothesInputValue) >= 0) {
 
 
         const expanceTotal = parseFloat(foodInputValue) + parseFloat(rentInputValue) + parseFloat(clothesInputValue);
@@ -86,9 +86,9 @@ function saveButtonChanges() {
     const alartDisplay = document.getElementById('alart-paragraph');
 
     //if given inputs are correct and income and expance is calculated and if the given save % is correct
-    if (typeof (parseFloat(saveInputValue) == 'number') && parseFloat(saveInputValue) > 0 &&
-        typeof (parseFloat(totalBalance) == 'number') && parseFloat(totalBalance) > 0 &&
-        typeof (parseFloat(incomeInputValue) == 'number') && parseFloat(incomeInputValue) > 0) {
+    if (typeof (parseFloat(saveInputValue) == 'number') && parseFloat(saveInputValue) >= 0 &&
+        typeof (parseFloat(totalBalance) == 'number') && parseFloat(totalBalance) >= 0 &&
+        typeof (parseFloat(incomeInputValue) == 'number') && parseFloat(incomeInputValue) >= 0) {
 
         const savingAmount = parseFloat(incomeInputValue) * ((parseFloat(saveInputValue) / 100));
         const remainingBalance = totalBalance - savingAmount;
