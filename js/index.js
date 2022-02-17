@@ -34,7 +34,7 @@ function expanceBalanceCalculation() {
         if (expanceTotal > incomeInputValue) {
             expanceTotalDisplay.innerText = 'Your expance is bigger then your income';
             balanceTotalDisplay.innerText = 'You have no balance';
-            return balanceTotal = "No balance";
+            return "No balance";
         }
         else {
             //if every requirements are fullfilled
@@ -47,7 +47,7 @@ function expanceBalanceCalculation() {
         //if the inputs are not number type and less then 0
         expanceTotalDisplay.innerText = 'Please give positive number as an input';
         balanceTotalDisplay.innerText = "Balance can't be calulated";
-        return balanceTotal = 'No balance';
+        return 'No balance';
     }
 
 }
@@ -61,6 +61,7 @@ document.getElementById('save-btn').addEventListener('click', function () {
 
     const incomeInputValue = inputValue();
     const totalBalance = expanceBalanceCalculation();
+    console.log(totalBalance);
 
     const saveInput = document.getElementById('save-input');
     const saveInputValue = saveInput.value;
