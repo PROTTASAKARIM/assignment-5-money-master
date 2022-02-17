@@ -24,19 +24,23 @@
         <section class="m-6">
             <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
                 <div>
-                    <img src="images/assignmet-5.jpg" alt="">
+                    <img src="images/assignmet-5-min.jpg" alt="">
                 </div>
-                <div class="text-center">
+                <div class="mx-4">
                     <h4 class="text-lg mb-2 font-semibold">Income</h4>
                     <p>Income : <input id="income-input" class="border mb-4 w-1/2 rounded border-gray-400" type="text">
                     </p>
                     <h4 class="text-lg mb-2 font-semibold">Expence</h4>
                     <p>Food : <input id="food-input" class="border mb-4 w-1/2 rounded border-gray-400" type="text"></p>
                     <p>Rent : <input id="rent-input" class="border mb-4 w-1/2 rounded border-gray-400" type="text"></p>
-                    <p>Clothes : <input id="clothes-input" class="border mb-4  w-1/2 rounded border-gray-400"
+                    <p>Clothes: <input id="clothes-input" class="border mb-4  w-1/2 rounded border-gray-400"
                             type="text"></p>
                     <button id="calculate-btn"
                         class="bg-teal-600 mb-2 rounded px-4 py-2 text-white fonnt-semibold">Calculate</button>
+                    <div id="alart-paragraph"
+                        class="bg-orange-100 border border-orange-500 w-1/2 text-orange-700 p-1 hidden" role="alert">
+                        <p>Inputs are not correct</p>
+                    </div>
                     <h4 class="text-lg font-semibold">Total Expences : <span id="total-expance">Waiting for input</span>
                     </h4>
                     <h4 class="text-lg  font-semibold">Balance : <span id="total-balance">Waiting for input</span></h4>

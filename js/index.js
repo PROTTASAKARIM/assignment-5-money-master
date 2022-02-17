@@ -19,6 +19,7 @@ function expanceBalanceCalculation() {
 
     const expanceTotalDisplay = document.getElementById('total-expance');
     const balanceTotalDisplay = document.getElementById('total-balance');
+    const alartDisplay = document.getElementById('alart-paragraph');
 
 
     //validation for if the inputs are not number and if the numbers are greater then 0 
@@ -34,12 +35,14 @@ function expanceBalanceCalculation() {
         if (expanceTotal > incomeInputValue) {
             expanceTotalDisplay.innerText = 'Your expance is bigger then your income';
             balanceTotalDisplay.innerText = 'You have no balance';
+            alartDisplay.style.display = 'block'
             return "No balance";
         }
         else {
             //if every requirements are fullfilled
             expanceTotalDisplay.innerText = expanceTotal;
             balanceTotalDisplay.innerText = balanceTotal;
+            alartDisplay.style.display = 'none';
             return balanceTotal;
         }
     }
@@ -47,6 +50,7 @@ function expanceBalanceCalculation() {
         //if the inputs are not number type and less then 0
         expanceTotalDisplay.innerText = 'Please give positive number as an input';
         balanceTotalDisplay.innerText = "Balance can't be calulated";
+        alartDisplay.style.display = 'block';
         return 'No balance';
     }
 
@@ -61,13 +65,14 @@ document.getElementById('save-btn').addEventListener('click', function () {
 
     const incomeInputValue = inputValue();
     const totalBalance = expanceBalanceCalculation();
-    console.log(totalBalance);
+
 
     const saveInput = document.getElementById('save-input');
     const saveInputValue = saveInput.value;
 
     const savingAmountField = document.getElementById('saving-amount');
     const remainingBalanceField = document.getElementById('remaining-balance');
+    const alartDisplay = document.getElementById('alart-paragraph');
 
     //if given inputs are correct and income and expance is calculated and if the given save % is correct
     if (typeof (parseFloat(saveInputValue) == 'number') && parseFloat(saveInputValue) > 0 &&
@@ -81,17 +86,21 @@ document.getElementById('save-btn').addEventListener('click', function () {
         if (savingAmount > totalBalance) {
             savingAmountField.innerText = 'You can not save this much money';
             remainingBalanceField.innerText = 'There is no remaining balance';
+            alartDisplay.style.display = 'block';
         }
         else {
             //if every requirements are full filled 
             savingAmountField.innerText = savingAmount;
             remainingBalanceField.innerText = remainingBalance;
+            alartDisplay.style.display = 'none';
         }
     }
     else {
         //if inputs given are not correct
-        savingAmountField.innerText = 'Give positive number as an input';
+
+        savingAmountField.innerText = 'Check your input fields.Give correct input';
         remainingBalanceField.innerText = 'Remaining balance can not be calculated';
+        alartDisplay.style.display = 'block';
     }
 
 
