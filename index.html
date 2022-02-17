@@ -21,30 +21,35 @@
         <h1 class="text-4xl text-center mt-10 font-semibold text-teal-600">Monthly Finance Statement</h1>
     </header>
     <main>
-        <section class="m-6">
+        <section class="m-8">
             <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
                 <div>
-                    <img src="images/assignmet-5-min.jpg" alt="">
+                    <img class="w-full" src="images/assignmet-5-1.jpg" alt="">
                 </div>
-                <div class="mx-4">
+                <div class="mx-16">
                     <h4 class="text-lg mb-2 font-semibold">Income</h4>
-                    <p>Income : <input id="income-input" class="border mb-4 w-1/2 rounded border-gray-400" type="text">
+                    <p>Income :
                     </p>
-                    <h4 class="text-lg mb-2 font-semibold">Expence</h4>
-                    <p>Food : <input id="food-input" class="border mb-4 w-1/2 rounded border-gray-400" type="text"></p>
-                    <p>Rent : <input id="rent-input" class="border mb-4 w-1/2 rounded border-gray-400" type="text"></p>
-                    <p>Clothes: <input id="clothes-input" class="border mb-4  w-1/2 rounded border-gray-400"
-                            type="text"></p>
+                    <input id="income-input" class="border mb-4 w-1/2 rounded px-2 border-gray-400" type="text">
+                    <h4 class="text-lg mb-2 font-semibold">Expences</h4>
+                    <p>Food : </p>
+                    <input id="food-input" class="border px-2  mb-4 w-1/2 rounded border-gray-400" type="text">
+                    <p>Rent : </p>
+                    <input id="rent-input" class="border px-2  mb-4 w-1/2 rounded border-gray-400" type="text">
+                    <p>Clothes: </p>
+                    <input id="clothes-input" class="border px-2 mb-4  w-1/2 rounded border-gray-400" type="text">
                     <button id="calculate-btn"
-                        class="bg-teal-600 mb-2 rounded px-4 py-2 text-white fonnt-semibold">Calculate</button>
+                        class="block bg-teal-600 mb-2 rounded px-4 py-2 text-white fonnt-semibold">Calculate</button>
                     <div id="alart-paragraph"
-                        class="bg-orange-100 border border-orange-500 w-1/2 text-orange-700 p-1 hidden" role="alert">
-                        <p>Inputs are not correct</p>
+                        class="text-center bg-orange-100 border border-orange-500 w-1/2 text-orange-700 p-1 hidden"
+                        role="alert">
+                        <p>Check your inputs</p>
                     </div>
                     <h4 class="text-lg font-semibold">Total Expences : <span id="total-expance">Waiting for input</span>
                     </h4>
                     <h4 class="text-lg  font-semibold">Balance : <span id="total-balance">Waiting for input</span></h4>
-                    <p>Save : <input id="save-input" class="border mb-4 w-20 rounded border-gray-400" type="text"> %
+                    <p>Save : <input id="save-input" class="border px-2 mb-4 w-20 rounded border-gray-400" type="text">
+                        %
                         <button id="save-btn"
                             class="bg-teal-600 rounded px-4 py-2 text-white fonnt-semibold">Save</button>
 

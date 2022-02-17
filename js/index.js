@@ -33,7 +33,7 @@ function expanceBalanceCalculation() {
 
         //validation for if total expance id greater then income or not
         if (expanceTotal > incomeInputValue) {
-            expanceTotalDisplay.innerText = 'Your expance is bigger then your income';
+            expanceTotalDisplay.innerText = 'Your expances are bigger then your income';
             balanceTotalDisplay.innerText = 'You have no balance';
             alartDisplay.style.display = 'block'
             return "No balance";
