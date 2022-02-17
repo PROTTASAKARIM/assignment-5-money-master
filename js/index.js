@@ -5,12 +5,17 @@ function inputValue() {
     return incomeInputValue;
 }
 //if incorrect data is given save field and remaing fiels will give this msg
-function saveChanges() {
+function saveChanges(isTrue) {
     const savingAmountField = document.getElementById('saving-amount');
     const remainingBalanceField = document.getElementById('remaining-balance');
+    if (isTrue == true) {
+        savingAmountField.innerText = 'Waiting for correct input';
+        remainingBalanceField.innerText = 'Waiting for correct input';
+    } else {
+        savingAmountField.innerText = 'Waiting for input';
+        remainingBalanceField.innerText = 'Waiting for input';
+    }
 
-    savingAmountField.innerText = 'Waiting for correct input';
-    remainingBalanceField.innerText = 'Waiting for correct input';
 
 }
 //calculate expance 
@@ -45,7 +50,7 @@ function expanceBalanceCalculation() {
             expanceTotalDisplay.innerText = 'Your expances are bigger then your income';
             balanceTotalDisplay.innerText = 'You have no balance';
             alartDisplay.style.display = 'block';
-            saveChanges();
+            saveChanges(true);
             return "No balance";
         }
         else {
@@ -53,6 +58,7 @@ function expanceBalanceCalculation() {
             expanceTotalDisplay.innerText = expanceTotal;
             balanceTotalDisplay.innerText = balanceTotal;
             alartDisplay.style.display = 'none';
+            saveChanges(false);
             return balanceTotal;
         }
     }
@@ -61,7 +67,7 @@ function expanceBalanceCalculation() {
         expanceTotalDisplay.innerText = 'Please give positive number as an input';
         balanceTotalDisplay.innerText = "Balance can't be calulated";
         alartDisplay.style.display = 'block';
-        saveChanges();
+        saveChanges(true);
         return 'No balance';
     }
 
