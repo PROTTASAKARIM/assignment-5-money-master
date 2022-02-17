@@ -1,6 +1,7 @@
 function inputValue() {
     const incomeInput = document.getElementById('income-input');
     const incomeInputValue = incomeInput.value;
+    console.log(typeof (incomeInputValue));
     return incomeInputValue;
 }
 
@@ -21,11 +22,16 @@ function expanceBalanceCalculation() {
 
         const expanceTotal = parseFloat(foodInputValue) + parseFloat(rentInputValue) + parseFloat(clothesInputValue);
         const balanceTotal = parseFloat(incomeInputValue) - expanceTotal;
-
-
-        expanceTotalDisplay.innerText = expanceTotal;
-        balanceTotalDisplay.innerText = balanceTotal;
-        return balanceTotal;
+        if (expanceTotal > incomeInputValue) {
+            expanceTotalDisplay.innerText = 'Your expance is bigger then your income';
+            balanceTotalDisplay.innerText = 'You have no balance';
+            return balanceTotal = "No balance";
+        }
+        else {
+            expanceTotalDisplay.innerText = expanceTotal;
+            balanceTotalDisplay.innerText = balanceTotal;
+            return balanceTotal;
+        }
     }
     else {
 
@@ -54,10 +60,15 @@ document.getElementById('save-btn').addEventListener('click', function () {
         typeof (parseFloat(incomeInputValue) == 'number') && parseFloat(incomeInputValue) > 0) {
 
         const savingAmount = parseFloat(incomeInputValue) * ((parseFloat(saveInputValue) / 100));
-        savingAmountField.innerText = savingAmount;
-
         const remainingBalance = totalBalance - savingAmount;
-        remainingBalanceField.innerText = remainingBalance;
+        if (savingAmount > totalBalance) {
+            savingAmountField.innerText = 'You can not save this much money';
+            remainingBalanceField.innerText = 'There is no remaining balance';
+        }
+        else {
+            savingAmountField.innerText = savingAmount;
+            remainingBalanceField.innerText = remainingBalance;
+        }
     }
     else {
         savingAmountField.innerText = 'Give positive number as an input';
