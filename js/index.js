@@ -4,6 +4,14 @@ function inputValue() {
     const incomeInputValue = incomeInput.value;
     return incomeInputValue;
 }
+function saveChanges() {
+    const savingAmountField = document.getElementById('saving-amount');
+    const remainingBalanceField = document.getElementById('remaining-balance');
+
+    savingAmountField.innerText = 'Waiting for correct input';
+    remainingBalanceField.innerText = 'Waiting for correct input';
+
+}
 
 function expanceBalanceCalculation() {
     const incomeInputValue = inputValue();
@@ -35,7 +43,8 @@ function expanceBalanceCalculation() {
         if (expanceTotal > incomeInputValue) {
             expanceTotalDisplay.innerText = 'Your expances are bigger then your income';
             balanceTotalDisplay.innerText = 'You have no balance';
-            alartDisplay.style.display = 'block'
+            alartDisplay.style.display = 'block';
+            saveChanges();
             return "No balance";
         }
         else {
@@ -51,6 +60,7 @@ function expanceBalanceCalculation() {
         expanceTotalDisplay.innerText = 'Please give positive number as an input';
         balanceTotalDisplay.innerText = "Balance can't be calulated";
         alartDisplay.style.display = 'block';
+        saveChanges();
         return 'No balance';
     }
 
